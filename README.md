@@ -95,6 +95,29 @@ portfolio/
     └── preview-mobile.png
 ```
 
+## 🚀 Como rodar localmente
+
+Não é preciso instalar nada. Escolha uma das opções:
+
+**1. Abrir direto no navegador**
+
+```bash
+git clone https://github.com/dazl-max/portfolio.git
+cd portfolio
+```
+
+Depois é só abrir o arquivo `index.html` com dois cliques.
+
+**2. Com servidor local (recomendado)**
+
+- **VS Code:** instale a extensão **Live Server**, clique com o botão direito em `index.html` e escolha **Open with Live Server**.
+- **Python:** dentro da pasta do projeto, rode:
+
+```bash
+  python -m http.server 5500
+```
+
+  e acesse <http://localhost:5500>.
 
 ## 🌐 Publicando no GitHub Pages
 
@@ -104,6 +127,40 @@ portfolio/
 4. Selecione a branch **main** e a pasta **/ (root)**, depois clique em **Save**.
 5. Em alguns minutos o site estará em `https://dazl-max.github.io/portfolio/`.
 
+> 💡 **Dica:** se o repositório se chamar `dazl-max.github.io`, o site fica no endereço principal `https://dazl-max.github.io/`.
+
+## 🎨 Como personalizar
+
+**Cores:** todas ficam no topo do `style.css`:
+
+```css
+:root {
+  --bg: #0f172a;       /* fundo */
+  --text: #94a3b8;     /* texto */
+  --heading: #e2e8f0;  /* títulos */
+  --accent: #5eead4;   /* cor de destaque */
+}
+```
+
+**Adicionar um projeto:** copie um bloco `<li>` dentro de `<section id="projetos">` no `index.html` e altere o nome, a descrição, as tags, o link e a imagem:
+
+```html
+<li>
+  <div class="item proj">
+    <div class="hover-bg"></div>
+    <div class="body">
+      <h3><a class="title" href="LINK_DO_PROJETO">Nome do projeto<span class="arrow">↗</span></a></h3>
+      <p>Descrição curta do problema que o projeto resolve.</p>
+      <ul class="tags"><li>Java</li><li>MySQL</li></ul>
+    </div>
+    <div class="proj-thumb"><img src="imgs/meu-projeto.png" alt="Tela do projeto" loading="lazy"></div>
+  </div>
+</li>
+```
+
+> 💡 **Dica:** evite espaços e acentos nos nomes de imagens (use `fonema-pipo.png` em vez de `Captura de tela...png`). Isso evita links quebrados em alguns servidores.
+
+**Adicionar uma experiência:** o processo é o mesmo, copiando um `<li>` em `<section id="experiencia">` e ajustando o período no `<header class="meta">`.
 
 ## 🧩 Próximos passos
 
