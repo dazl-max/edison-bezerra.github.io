@@ -11,16 +11,23 @@
   // Menu mobile
   const nav = document.getElementById('nav');
   const menuBtn = document.getElementById('menuBtn');
-  menuBtn.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
+  const setMenu = open => {
+    nav.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     menuBtn.textContent = open ? '✕' : '☰';
+  };
+  menuBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    setMenu(!nav.classList.contains('open'));
   });
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', false);
-    menuBtn.textContent = '☰';
-  }));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  // Fecha ao tocar fora, apertar Esc ou quando a tela ficar larga
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('open') && !nav.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+  matchMedia('(min-width: 861px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 
   // Destaca no menu a seção visível
   const links = document.querySelectorAll('.nav a');
