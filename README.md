@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://dazl-max.github.io/portfolio/"><strong>🌐 Ver o site no ar</strong></a>
+  <a href="https://dazl-max.github.io/edison-bezerra.github.io/"><strong>🌐 Ver o site no ar</strong></a>
   ·
   <a href="https://www.linkedin.com/in/edison-bezerra-da-silva-567088346">LinkedIn</a>
   ·
