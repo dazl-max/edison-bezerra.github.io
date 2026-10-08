@@ -30,9 +30,9 @@
 ## 📸 Prévia
 
 <p align="center">
-  <img src="assets/preview-desktop.png" alt="Prévia do portfólio no computador" width="72%">
+  <img src="imagens/preview-desktop.png" alt="Prévia do portfólio no computador" width="72%">
   &nbsp;
-  <img src="assets/preview-mobile.png" alt="Prévia do portfólio no celular" width="22%">
+  <img src="imagens/preview-mobile.png" alt="Prévia do portfólio no celular" width="22%">
 </p>
 
 ## 📑 Sumário
